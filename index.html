@@ -14,9 +14,16 @@
 <script src="https://unpkg.com/@wcjiang/notify/dist/notify.min.js"></script>
 <script type="text/javascript">
  setTimeout(() => {
-        Notify({
-          title: 'Welcome to iNotify!',
-          body: 'You are opening the iNotify website!',
+       notify.notify({
+          title: 'New notice',
+          body: 'Thunder, it’s raining...',
+          openurl: 'https://jaywcjlove.github.io',
+          onclick: function() {
+            console.log('on click')
+          },
+          onshow: function() {
+            console.log('on show')
+          },
         });
       }, 1000)  
 
