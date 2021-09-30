@@ -16,21 +16,8 @@
  setTimeout(() => {
         var iN = new Notify({
             effect: 'flash',
-            interval: 500,
-            message: 'There is new message!',
-            audio:{
-              file: 'msg.mp4', // You can use arrays to pass sound files in multiple formats.
-            },
-            notification:{
-              title: 'Notification!', // Set notification title
-              icon: '', // Set notification icon, The default is Favicon
-              body: 'You have a new message!', // Set message content
-            }
+            interval: 500
           }).setFavicon(10).player();
-
-          // The chrome notification pops up, and the parameters are not passed as default values...
-          iN.notify(); 
-
           iN.notify({
             title: 'Notification!', // Set notification title
             body: 'You have a new message!', // Set message content
