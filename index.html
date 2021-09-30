@@ -14,17 +14,27 @@
 <script src="https://unpkg.com/@wcjiang/notify/dist/notify.min.js"></script>
 <script type="text/javascript">
  setTimeout(() => {
-       notify.notify({
-          title: 'New notice',
-          body: 'Thunder, it’s raining...',
-          openurl: 'https://jaywcjlove.github.io',
-          onclick: function() {
-            console.log('on click')
-          },
-          onshow: function() {
-            console.log('on show')
-          },
-        });
+        var iN = new Notify({
+            effect: 'flash',
+            interval: 500,
+            message: 'There is new message!',
+            audio:{
+              file: 'msg.mp4', // You can use arrays to pass sound files in multiple formats.
+            },
+            notification:{
+              title: 'Notification!', // Set notification title
+              icon: '', // Set notification icon, The default is Favicon
+              body: 'You have a new message!', // Set message content
+            }
+          }).setFavicon(10).player();
+
+          // The chrome notification pops up, and the parameters are not passed as default values...
+          iN.notify(); 
+
+          iN.notify({
+            title: 'Notification!', // Set notification title
+            body: 'You have a new message!', // Set message content
+          });
       }, 1000)  
 
 </script>
